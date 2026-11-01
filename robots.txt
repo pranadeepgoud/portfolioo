@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pranadeepgoud.github.io/portfolio/sitemap.xml

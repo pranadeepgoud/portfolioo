@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Not Found · Pranadeep Goud Budhera</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0F1A'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FFB020'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0F1A; --surface: #111A2A; --ink: #E9EEF6; --muted: #8E9AB0; --rule: #22304A;
+  --signal: #5B8CFF; --alert: #FFB020; --alert-ink: #FFC75A; color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --bg: #F2F4F8; --surface: #FFFFFF; --ink: #0D1526; --muted: #535F77; --rule: #D3DAE6; --signal: #2350D4; --alert: #E39400; --alert-ink: #9A5B00; color-scheme: light; }
+}
+:root[data-theme="light"] { --bg: #F2F4F8; --surface: #FFFFFF; --ink: #0D1526; --muted: #535F77; --rule: #D3DAE6; --signal: #2350D4; --alert: #E39400; --alert-ink: #9A5B00; color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, sans-serif; padding: 24px 16px;
+  background-image: radial-gradient(var(--rule) 1px, transparent 1px); background-size: 28px 28px; }
+.card { width: 100%; max-width: 560px; background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--alert); border-radius: 6px; padding: 32px 28px; display: grid; gap: 18px; }
+.mono { font-family: "IBM Plex Mono", monospace; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.stamp { font-family: "IBM Plex Mono", monospace; font-size: .72rem; font-weight: 600; letter-spacing: .14em; color: var(--alert-ink); border: 1.5px solid var(--alert); padding: 3px 8px; border-radius: 3px; transform: rotate(-2deg); width: fit-content; }
+h1 { font-family: "Archivo", "Arial Black", sans-serif; font-stretch: 125%; font-weight: 850; font-size: clamp(2.4rem, 9vw, 3.6rem); line-height: .95; margin: 0; text-transform: uppercase; }
+p { margin: 0; color: var(--muted); line-height: 1.6; }
+dl { margin: 0; display: grid; gap: 6px; font-family: "IBM Plex Mono", monospace; font-size: .8rem; border-top: 1px solid var(--rule); padding-top: 14px; }
+dl div { display: flex; justify-content: space-between; gap: 12px; }
+dt { color: var(--muted); } dd { margin: 0; } .flag { color: var(--alert-ink); font-weight: 600; }
+a.btn { display: inline-flex; width: fit-content; font-weight: 600; text-decoration: none; color: #fff; background: var(--signal); padding: 11px 18px; border-radius: 4px; }
+a.btn:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
+</style>
+<script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {}</script>
+</head>
+<body>
+<main class="card">
+  <span class="stamp">Error 404</span>
+  <h1>Case not found</h1>
+  <p>This trail goes cold. The page you were following doesn't exist, or it moved before the investigation reached it.</p>
+  <dl>
+    <div><dt>STATUS</dt><dd>Closed, no match</dd></div>
+    <div><dt>LAST KNOWN LOCATION</dt><dd id="path">/</dd></div>
+    <div><dt>NEXT STEP</dt><dd class="flag">Return to main file</dd></div>
+  </dl>
+  <a class="btn" href="/portfolio/">Back to the portfolio</a>
+</main>
+<script>document.getElementById("path").textContent = location.pathname.slice(0, 48);</script>
+</body>
+</html>
