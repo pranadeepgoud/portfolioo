@@ -17,6 +17,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0F1A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0F1A'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23FFB020'/%3E%3C/svg%3E">
+<script>
+  /* JOB-SEARCH SWITCH: true = show "open to roles" signals, false = hide them */
+  var LOOKING = true;
+  document.documentElement.setAttribute("data-looking", LOOKING ? "yes" : "no");
+</script>
+<style>html[data-looking="no"] [data-when="looking"], html[data-looking="yes"] [data-when="not-looking"] { display: none !important; }</style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,6 +139,9 @@ strong { font-weight: 600; color: var(--ink); }
 .hero .role em { font-style: normal; color: var(--signal); }
 .hero .summary { max-width: 58ch; color: var(--muted); font-size: 1.08rem; }
 .hero .summary strong { color: var(--ink); }
+.targets { display: grid; gap: 10px; }
+.targets ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.targets li { font-family: var(--font-mono); font-size: .78rem; padding: 6px 11px; border: 1px solid color-mix(in srgb, var(--signal) 45%, var(--rule)); border-radius: 3px; background: color-mix(in srgb, var(--signal) 10%, var(--surface)); color: var(--ink); }
 .cta { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
 .btn { font: inherit; font-size: .92rem; font-weight: 600; cursor: pointer; text-decoration: none; border-radius: 4px; padding: 11px 18px; border: 1px solid var(--signal); background: var(--signal); color: #fff; display: inline-flex; align-items: center; gap: 8px; }
 .btn:hover { filter: brightness(1.08); }
@@ -294,6 +303,26 @@ footer p { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
   @keyframes rise { from { transform: translateY(10px); opacity: .5; } to { transform: none; opacity: 1; } }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pranadeep Goud Budhera",
+  "alternateName": "Budhera Pranadeep Goud",
+  "jobTitle": "FinCrime Analyst",
+  "description": "Financial crime analyst specialising in AML, fraud and EDD investigations, SAR/STR reporting for 31 European FIUs, and SQL-driven fraud analysis.",
+  "url": "https://pranadeepgoud.github.io/portfolio/",
+  "image": "https://pranadeepgoud.github.io/portfolio/og-image.jpg",
+  "email": "mailto:pranadeepgoudbudhera@gmail.com",
+  "worksFor": { "@type": "Organization", "name": "Revolut", "url": "https://www.revolut.com" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Osmania University", "url": "https://www.osmania.ac.in" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Hyderabad", "addressRegion": "Telangana", "addressCountry": "IN" },
+  "nationality": { "@type": "Country", "name": "India" },
+  "knowsLanguage": ["English", "Hindi", "Telugu"],
+  "knowsAbout": ["Anti-Money Laundering", "Transaction Monitoring", "Enhanced Due Diligence", "KYC", "SAR/STR Reporting", "Fraud Investigation", "Account Takeover Fraud", "Money Mule Detection", "Sanctions and PEP Screening", "Chargebacks", "SQL", "FATF Recommendations", "EU AML Directives"],
+  "sameAs": ["https://www.linkedin.com/in/budherapranadeepgoud/", "https://github.com/pranadeepgoud"]
+}
+</script>
 </head>
 <body>
 
@@ -319,7 +348,7 @@ footer p { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
     <canvas id="net" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="hero-main">
-      <div class="status"><span class="dot" aria-hidden="true"></span><span class="label">Open to new roles · India or abroad</span></div>
+      <div class="status" data-when="looking"><span class="dot" aria-hidden="true"></span><span class="label">Open to new roles · India or abroad</span></div>
       <p class="hook">Financial crime doesn't announce itself. <span>It hides in patterns.</span></p>
       <h1><span>Pranadeep</span><span>Goud</span><span class="outline">Budhera</span></h1>
       <p class="role">FinCrime Analyst at <em>Revolut</em> · AML, fraud and EDD investigations</p>
@@ -328,6 +357,16 @@ footer p { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
         <div><span class="label">Nationality</span><b>Indian</b></div>
         <div><span class="label">EU Blue Card</span><b>Eligible with a qualifying offer</b></div>
         <div><span class="label">Notice period</span><b>30 days</b></div>
+      </div>
+      <div class="targets">
+        <span class="label">Specialisms</span>
+        <ul>
+          <li>AML investigations</li>
+          <li>KYC / EDD</li>
+          <li>Transaction monitoring</li>
+          <li>Fraud and payments</li>
+          <li>SAR/STR reporting</li>
+        </ul>
       </div>
       <div class="cta">
         <button class="btn" type="button" id="copyBtn">Copy email</button>
@@ -724,7 +763,8 @@ footer p { color: var(--muted); max-width: 60ch; font-size: 1.05rem; }
   <div class="wrap">
     <span class="label">Contact</span>
     <h2>Let's follow <span>the money</span> together.</h2>
-    <p>I am looking for AML, fraud and financial crime investigation roles in Hyderabad and Bengaluru, remote across India, and in Germany, the Netherlands, Luxembourg and the UAE.</p>
+    <p data-when="looking">I am looking for AML, fraud and financial crime investigation roles in Hyderabad and Bengaluru, remote across India, and in Germany, the Netherlands, Luxembourg and the UAE.</p>
+    <p data-when="not-looking">Happy to talk about financial crime, AML investigations and fraud prevention. The quickest way to reach me is email or LinkedIn.</p>
     <div class="cta">
       <button class="btn" type="button" id="copyBtn2">Copy email</button>
       <a class="btn ghost" href="https://www.linkedin.com/in/budherapranadeepgoud/" target="_blank" rel="noopener">LinkedIn ↗</a>
